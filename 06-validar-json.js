@@ -13,8 +13,8 @@ const jsonValidacionPersona = Joi
     .with('nombre', 'apellido')
 
 const jsonPrueba = {
-    nombre: 'asdasd',
-    apellido: 'as'
+    nombre: 'Bryan ',
+    apellido: 'Rodriguez'
 }
 
 Joi.validate(jsonPrueba, jsonValidacionPersona, (error, valor) => {
