@@ -21,3 +21,20 @@ console.log(texto.replace('hola','hello'))
 console.log(texto.concat(', ', nombre))
 
 console.log(`${texto} mas mi nombre: ${nombre}`)
+
+console.log(texto.trim())
+
+console.log(texto.split(''))
+
+// retorna la letra decuardo a la pocision en la que se necuentre
+console.log(nombre.charAt(1))
+
+
+
+
+
+
+
+
+
+
