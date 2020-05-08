@@ -81,7 +81,7 @@ var operadoresMapyFilter = arreglo2
             return item == 4
         }
     )
-
+/*
 arreglo uno, multiplique * 2, y me filtrar los pares, usar map y filter
 arreglo dos, filter los los impares, sumar + 2
 
@@ -111,8 +111,18 @@ arreglo dos, filter los los impares, sumar + 2
             },
             {
                 valor: 23
-            }
+            
         ],
     }
+    }
+    */
+   var arregloReduce =[2,1,11,3,45]
+   var valorSumaArreglo = arregloReduce
+   .reduce(
+       (acumulador, item, indice, arreglo) => {
+           return acumulador + item
 
-}
+       }, 0
+    )
+    console.log(valorSumaArreglo);
+   
