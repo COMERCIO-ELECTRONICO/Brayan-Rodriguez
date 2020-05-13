@@ -1,4 +1,3 @@
-//Tipo de dato
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -12,21 +11,22 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+// tipo datos
 var nombre = 'Bryan';
 var numero = 1;
 var Bool = true;
-var objeto = {
-    nombre: 'Bryan'
+var objetoUsuario = {
+    nombre: 'Brayn'
 };
-//arreglos
+// arreglos
 var arregloUno = [];
 var arregloDos = [];
 // varios tipados
 var nombreDos = 1;
-var arreglo1 = [];
+var arregl1 = [];
 var arreglo2 = [];
 var variableLet;
-var variabeConst = 1;
+var variableConts = 1;
 // any
 var cualquierVariable;
 function sumar(num1, num2) {
@@ -68,3 +68,53 @@ var hijo = /** @class */ (function (_super) {
 }(Persona));
 var hijoPersona = new hijo('Bryan', 'Rodriguez');
 console.log(hijoPersona);
+/////////-----------------
+var Person = /** @class */ (function () {
+    function Person(nombre, apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+    return Person;
+}());
+var alumno = /** @class */ (function (_super) {
+    __extends(alumno, _super);
+    function alumno(nombre, apellido) {
+        var _this = _super.call(this, nombre, apellido) || this;
+        _this.nombre = nombre;
+        _this.apellido = apellido;
+        return _this;
+    }
+    Object.defineProperty(alumno.prototype, "setNombre", {
+        set: function (nombre) {
+            this.nombre = nombre;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(alumno.prototype, "setApellido", {
+        set: function (apellido) {
+            this.apellido = apellido;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(alumno.prototype, "getNombre", {
+        get: function () {
+            return this.nombre;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(alumno.prototype, "getApellido", {
+        get: function () {
+            return this.nombre;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return alumno;
+}(Person));
+var alumnoNuevo = new alumno();
+alumnoNuevo.setNombre('Bryan');
+alumnoNuevo.setApellido('');
+alumnoNuevo.getApellido();

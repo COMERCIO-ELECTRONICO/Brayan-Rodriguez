@@ -1,46 +1,43 @@
-//Tipo de dato
-
-const nombre: string = 'Bryan'
+// tipo datos
+const nombre: string = 'Bryan';
 const numero: number = 1;
 const Bool: boolean = true;
-const objeto: object = {
-    nombre: 'Bryan',
+const objetoUsuario: object = {
+    nombre: 'Brayn',
 }
 
-//arreglos
+// arreglos
 const arregloUno: Array<boolean> = [];
 const arregloDos: string[] = [];
-
 // varios tipados
 
-const nombreDos: (string | number) = 1
-const arreglo1: Array<boolean | number> = [];
+const nombreDos: (string | number) = 1;
+const arregl1: Array<boolean | number> = [];
 const arreglo2: (string | object)[] = [];
 
 
 let variableLet: number;
-const variabeConst: number = 1;
-
+const variableConts: number = 1;
 // any
 let cualquierVariable: any
 
-function sumar(num1?:number, num2?: number): number {
+function sumar(num1?: number, num2?: number): number {
     let a = 2;
     let b = 3;
 
-    if(num1){
+    if (num1) {
         a = num1;
     }
-    if(num2){
-        b = num2;
+    if (num2) {
+        b = num2
     }
-    return a+b;
+
+    return a + b;
 };
 
 sumar(5, 5);
 sumar(5);
 sumar();
-
 console.log(sumar(5, 5));
 console.log(sumar(5));
 console.log(sumar());
@@ -68,3 +65,40 @@ class hijo extends Persona {
 
 const hijoPersona = new hijo('Bryan', 'Rodriguez');
 console.log(hijoPersona);
+
+/////////-----------------
+
+class Person {
+    constructor(
+        protected nombre?: string,
+        protected apellido?: string
+    ) { }
+}
+
+class alumno extends Person {
+    constructor(
+        protected nombre?: string,
+        protected apellido?: string
+    ) {
+        super(nombre, apellido);
+    }
+
+    set setNombre(nombre: string | any) {
+        this.nombre = nombre;
+    }
+    set setApellido(apellido: string | any) {
+        this.apellido = apellido;
+    }
+
+    get getNombre(): string | any {
+        return this.nombre
+    }
+    get getApellido(): string | any {
+        return this.nombre
+    }
+}
+
+const alumnoNuevo: alumno = new alumno();
+alumnoNuevo.setNombre('Bryan');
+alumnoNuevo.setApellido('');
+alumnoNuevo.getApellido();
