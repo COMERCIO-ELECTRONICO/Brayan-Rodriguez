@@ -1,3 +1,4 @@
+
 import {
   Component,
   OnInit,
@@ -39,7 +40,7 @@ export class MiPrimerComponenteComponent implements OnInit, OnDestroy {
 
 
   SALUDAR() {
-    alert('holaaaaaa');
+    alert('HOLA');
     this.saludoHijo.emit('saludo de tu hijo');
   }
 

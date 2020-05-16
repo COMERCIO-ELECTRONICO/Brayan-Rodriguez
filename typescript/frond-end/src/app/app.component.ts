@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,13 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'front-end';
 
-  tituloPadre = 'soy tu padre hola';
-  nombreBotonPadre = 'alertar!!!!!!!!';
+  tituloPadre = 'SOY TU PADRE';
+  nombreBotonPadre = 'ALERTA';
   imagenPadre = 'https://as.com/futbol/imagenes/2020/01/27/album/1580109965_448579_1580110002_album_grande.jpg';
 
   datosHijo = {
-    tituloPadre: 'soy tu padre hola',
-    nombreBotonPadre: 'alertar!!!!!!!!',
+    tituloPadre: 'SOY TU PADRE',
+    nombreBotonPadre: 'ALERTA',
     imagenPadre: 'https://as.com/futbol/imagenes/2020/01/27/album/1580109965_448579_1580110002_album_grande.jpg',
   };
 
