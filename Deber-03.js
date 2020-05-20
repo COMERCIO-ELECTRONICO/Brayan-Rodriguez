@@ -27,7 +27,7 @@ function anadirUser(arreglo, user, indice, cb) {
 
     arreglo[indice] = user
     cb({
-        mensaje: 'Datos ingresados exitosamente',
+        mensaje: 'Datos ingresados',
         arreglo
     })
 }
