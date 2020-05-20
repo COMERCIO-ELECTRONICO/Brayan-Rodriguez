@@ -24,7 +24,7 @@ export class MiPrimerComponenteComponent implements OnInit, OnDestroy {
 
   fecha = new Date();
   sueldo: number = 3.1416;
-  nombre: string = 'Bryan';
+  nombre: string = 'kevin';
 
 
   constructor() { }
@@ -40,7 +40,7 @@ export class MiPrimerComponenteComponent implements OnInit, OnDestroy {
 
 
   SALUDAR() {
-    alert('HOLA');
+    alert('holaaaaaa');
     this.saludoHijo.emit('saludo de tu hijo');
   }
 
