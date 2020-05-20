@@ -1,9 +1,9 @@
 
 import { LoginComponent } from './login/login.component';
-import { RouterModule, Routes } from "@angular/router";
-import { HomeComponent } from "./inicio/home/home.component";
-import { NgModule } from "@angular/core";
-import { NoEncontradoComponent } from "./inicio/no-encontrado/no-encontrado.component";
+import { NoEncontradoComponent } from './inicio/no-encontrado/no-encontrado.component';
+import { HomeComponent } from './inicio/home/home.component';
+import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
 
 
 
@@ -20,6 +20,11 @@ const rutas: Routes = [
         path: 'usuario',
         loadChildren: () => import('./usuario/usuario.module')
             .then(usuario => usuario.UsuarioModule)
+    },
+    {
+        path: 'pokemon',
+        loadChildren: () => import('./pokemon/pokemon.module')
+            .then(pokemon => pokemon.PokemonModule)
     },
     {
         path: '',
