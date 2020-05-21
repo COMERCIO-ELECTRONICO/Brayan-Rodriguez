@@ -1,0 +1,26 @@
+<p>home works!</p>
+<button
+[routerLink]="['/login']">
+    ir al login
+</button>
+<button
+[routerLink]="['/usuario','listar']">
+    ir a USUARIO LISTAR 
+</button>
+<button
+(click)="irAUsuarioListar()">
+    ir a usuario con click
+</button>
+<h1>DeberPokemon</h1>
+<h2>crear,editar,listar</h2>
+<button [routerLink] ="['/pokemon','listarpokemon']">
+    Listar Pokemon
+</button>
+<button (click)="editarPokemon()">
+    Editar Pokemon
+</button>
+<button (click)="crearPokemon()">
+    Crear Pokemon
+
+</button>
+
