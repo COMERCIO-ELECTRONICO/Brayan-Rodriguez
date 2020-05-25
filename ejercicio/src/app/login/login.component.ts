@@ -48,9 +48,16 @@ export class LoginComponent implements OnInit {
     if (this.pass === '1234') {
       alert(this.correo);
       if (this.seleccionadoValor === 'Bryan') {
-        alert('es estudiante');
+        alert('Estudiante');
         this._router.navigate(
           ['/estudiante', 'perfil']
+        )
+      }
+
+      if (this.seleccionadoValor === 'Esteban') {
+        alert('Profesor');
+        this._router.navigate(
+          ['/profesor', 'perfil']
         )
       }
     } else {

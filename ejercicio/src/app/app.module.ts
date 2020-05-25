@@ -21,7 +21,7 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
     NoEncontradoComponent,
     IniciarSesionComponent,
     LoginComponent,
-    PerfilUsuarioComponent,   
+    PerfilUsuarioComponent,
   ],
 
   imports: [
