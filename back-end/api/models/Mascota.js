@@ -13,6 +13,12 @@ module.exports = {
     },
     edad:{
       type: 'number'
+    },
+
+    //RELATIONS MANY ONE
+    
+    misMascotas: {
+      model: 'usuario'
     }
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
