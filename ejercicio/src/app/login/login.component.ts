@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/Router';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -19,9 +20,35 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private readonly _router: Router,
+    private readonly _loginService:LoginService
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this._loginService
+      .metodoPost(
+        'http://localhost:1337/usuario',
+        {
+          nombre: "Bryan",
+          edad: 21,
+          correo: 'Marcelo',
+          esCasado: false
+        }
+      )
+      .subscribe(
+        (resultadoPost) => {
+          console.log('Respuest de Post');
+          console.log(resultadoPost);
+        }
+      )
+
+    this._loginService
+      .metodoGet('localhost:1337/usuario')
+      .subscribe((resultadoMetodoGet) => {
+        console.log('Respuest de Get');
+        console.log(resultadoMetodoGet);
+      });
+
+  }
 
   buscarSugerencia(evento) {
     console.log(evento.query);
@@ -63,5 +90,14 @@ export class LoginComponent implements OnInit {
     } else {
       alert('no ingreso');
     }
+  }
+  eliminarRegitroPorId() {
+    this._loginService
+      .metodoDelete('http://localhost:1337/usuario/2').subscribe(
+        (respuestDelete) => {
+          console.log(' repuesta de delete');
+          console.log(respuestDelete);
+        }
+      )
   }
 }
