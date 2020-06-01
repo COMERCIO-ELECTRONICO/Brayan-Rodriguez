@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
       this.sugerencias = ['Bryan', 'Esteban', 'Bruno'];
     }
   }
-
+  
   valorSeleccionado(evento) {
     console.log(evento);
     this.seleccionadoValor = evento;
