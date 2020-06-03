@@ -7,6 +7,7 @@ import { AccountService, AlertService } from '@app/_services';
 
 @Component({ templateUrl: 'register.component.html' })
 export class RegisterComponent implements OnInit {
+    styleUrls: ['./login.component.css']
     form: FormGroup;
     loading = false;
     submitted = false;
