@@ -1,4 +1,4 @@
-# back-end-proyectocomercio
+# back-end-proyectoReserva
 
 a [Sails v1](https://sailsjs.com) application
 
