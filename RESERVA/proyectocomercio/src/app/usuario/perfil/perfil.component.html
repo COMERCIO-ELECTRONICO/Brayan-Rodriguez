@@ -1,0 +1,61 @@
+
+<div class="container">
+  <div class="row">
+<div class="col-sm-4">
+   <img src="https://image.flaticon.com/icons/png/512/504/504276.png" width="250px" height="150px" />
+ 
+</div>
+<div class="col-sm-8" style="scroll-margin-top: 35px;">
+<div class="h1">HOSPITAL METROPOLITANO</div>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+ </button>
+</div>
+<div class="col-sm-12">
+  <nav class="nav nav-pills nav-fill">
+
+
+    <a class="nav-item nav-link active" [routerLink]="['/usuario/perfil']">PERFIL</a>
+    <a class="nav-item nav-link active" [routerLink]="['/usuario/servicios']">REGISTRO DOCTOR</a>
+    <a class="nav-item nav-link active" [routerLink]="['/usuario/pacientes']">REGISTRO PACIENTES</a>
+    <a class="nav-item nav-link active" [routerLink]="['/usuario/nuevareserva']">NUEVA RESERVA</a>
+    <a class="nav-item nav-link active" [routerLink]="['/usuario/reserva']"> RESERVA</a>
+    <a class="nav-item nav-link active" [routerLink]="['/inicio']">Cerrar Sesion</a>
+  </nav>
+
+</div>
+<div class="col-sm-12"></div>
+</div></div>
+
+
+<div class="container" style="text-align:center; width:100%" style="margin-top: 30px;">
+<div class="padre" style="margin:auto; text-align:left;">
+ 
+  
+  <table class="table" style="margin:auto; text-align:left;">
+    <thead class="thead-dark">
+        <tr>
+          <th scope="col">Doctor</th>
+          <th scope="col">Años Experiencia</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Especialidad</th>
+         
+        </tr>
+      
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let producto of productos" class="box">
+        <th>{{ producto.nombre }}</th>
+        <th>{{ producto.precio }}</th>
+        <th>{{ producto.detalle }}</th>
+         <th>{{ producto.imagen }}</th>
+        <th><img src="{{ producto.imagen }}" alt="" width="150px" /></th>
+        <th><button (click)="comprar(producto)" type="button" class="btn btn-danger">SALUDO
+        </button></th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

@@ -1,0 +1,76 @@
+<nav style="background-color: orangered;" class="navbar navbar-expand-lg navbar-dark ">
+    <img
+      src="https://image.flaticon.com/icons/png/512/504/504276.png"
+      width="10%"
+      alt=""
+    />
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav mr-auto" style="text-align:center; width:100%">
+         <li class="nav-item" style="margin:auto; text-align:left;">
+           <a class="nav-link" href="#">
+             <h1>INICIO</h1>
+           </a>
+         </li>
+
+       </ul>
+        <form class="form-inline my-2 my-lg-0" style="text-align:center; width:40%">
+          <button class="btn btn-outline-danger" [routerLink]="['/registrarse']">
+            Registrarse
+          </button>
+
+          <button class="btn btn-outline-danger" [routerLink]="['/login']" style="margin:auto; text-align:left;">
+            Iniciar Sesion
+          </button>
+        </form>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+    <div fxLayout="column" fxLayoutAlign="center center" class="padre" style="color:orangered"
+      style="background-color:orangered;">
+      <div>
+        <img
+          src="https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-3-avatar-2754579_120516.png"
+          width="40%"
+          alt=""
+          class="box2"
+        />
+      </div>
+
+<div class="box2" ><h3>Usuario</h3></div>
+    <div class="box2">  <input  [(ngModel)]="usuariomodel" name="usuariomodel"></div>
+    <div class="box2"><h3>Contraseña</h3></div>
+    <div class="box2">
+      <input  [(ngModel)]="contraseniamodel" name="contraseniamodel" type="password">
+    </div>
+
+    <div class="box2" style="margin-top: 25px;">
+      <button 
+        type="button"
+        class="btn btn-danger"
+        type="submit"
+        (click)="ingresar()"
+       
+      >
+        Iniciar Sesion
+      </button>
+    </div>
+</div> 
+

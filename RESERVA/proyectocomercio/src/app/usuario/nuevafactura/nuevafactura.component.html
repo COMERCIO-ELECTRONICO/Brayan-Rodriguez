@@ -1,0 +1,208 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="https://image.flaticon.com/icons/png/512/504/504276.png" width="250px" height="150px" />
+
+    </div>
+    <div class="col-sm-8" style="scroll-margin-top: 35px;">
+      <div class="h1">HOSPITAL METROPOLITANO</div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="col-sm-12">
+      <nav class="nav nav-pills nav-fill">
+
+
+        <a class="nav-item nav-link active" [routerLink]="['/usuario/perfil']">PERFIL</a>
+        <a class="nav-item nav-link active" [routerLink]="['/usuario/servicios']">REGISTRO DOCTOR</a>
+        <a class="nav-item nav-link active" [routerLink]="['/usuario/pacientes']">REGISTRO PACIENTES</a>
+        <a class="nav-item nav-link active" [routerLink]="['/usuario/nuevareserva']">NUEVA RESERVA</a>
+        <a class="nav-item nav-link active" [routerLink]="['/usuario/reserva']"> RESERVA</a>
+        <a class="nav-item nav-link active" [routerLink]="['/inicio']">Cerrar Sesion</a>
+      </nav>
+
+
+  
+
+<div>
+  <h5> Paciente Registrado</h5>
+
+  <div
+    *ngFor="let cliente of clientes"
+    (click)="onSelectectCity(cliente)"
+    (dblclick)="toggleEditOn()"
+  >
+  <table class="table">
+    <thead class="thead-dark">
+      
+        <th scope="col">nombre pacientes</th>
+      
+      </thead>
+     
+          <tr>
+
+            {{ cliente.nombre }}
+          </tr>
+        
+      
+        </table>
+   
+  </div>
+</div>
+ 
+<div id="elemetoexportar">
+<div class="padre" >
+  <div class="input-group mt-2" *ngIf="editOn" style="background-color: white;">
+    <div>
+    <table class="table">
+      <thead class="thead-dark">
+    <th scope="col">Datos Reserva</th>
+      <tbody></tbody>
+      </table>
+
+  <mat-divider class="divider" style="background-color: white;"></mat-divider>
+      <div >
+        <h4>Cedula</h4>
+        <input
+          type="text"
+          class="form-control"
+          name="editOn"
+          value="{{ selectedCliente.cedula }}"
+          [(ngModel)]="selectedCliente.cedula"
+        />
+      </div>
+      <div>
+        <h5>Nombre</h5>
+        <input
+          type="text"
+          class="form-control"
+          name="editOn"
+          value="{{ selectedCliente.nombre }}"
+          [(ngModel)]="selectedCliente.nombre"
+        />
+      </div>
+      <div>
+        <h5>Apellido</h5>
+        <input
+          type="text"
+          class="form-control"
+          name="editOn"
+          value="{{ selectedCliente.apellido }}"
+          [(ngModel)]="selectedCliente.apellido"
+        />
+      </div>
+      <div>
+        <h5>Correo</h5>
+        <input
+          type="text"
+          class="form-control"
+          name="editOn"
+          value="{{ selectedCliente.correo }}"
+          [(ngModel)]="selectedCliente.correo"
+        />
+      </div>
+      <div>
+        <h5>Direccion</h5>
+        <input
+          type="text"
+          class="form-control"
+          name="editOn"
+          value="{{ selectedCliente.direccion }}"
+          [(ngModel)]="selectedCliente.direccion"
+        />
+      </div>
+      <div>
+        <h5>Telefono</h5>
+        <input
+          type="text"
+          class="form-control"
+          name="editOn"
+          value="{{ selectedCliente.telefono }}"
+          [(ngModel)]="selectedCliente.telefono"
+        />
+      </div>
+
+    <div class="div">
+       <label for="exampleFormControlSelect1">Especialidad</label>
+       <select class="form-control" id="exampleFormControlSelect1">
+         <option>Medicina General</option>
+         <option>Medicina Interna</option>
+         <option>Traumatologia</option>
+         <option>Urologia</option>
+         <option>Cardiologia</option>
+         <option>Neumonia</option>
+         <option>Neurologia</option>
+         <option>Neurocirugia</option>
+         <option>Dermatologia</option>
+         <option>Cirugia Torácica</option>
+       </select>
+    </div>
+      <div>
+        <h5>Fecha</h5>
+        <input
+          type="text"
+          [(ngModel)]="fecha"
+          name="fecha"
+         type="date"
+        />
+      </div>
+    </div>
+    
+  </div>
+ 
+
+  <mat-divider class="divider"></mat-divider>
+  
+  <div class="row">
+    
+    <div class="col-sm">
+      <div><h5>Valores a Cancelar</h5></div>
+      <div *ngFor="let item of arrayDesdeService">
+        <div>
+          <h6>{{ item }}</h6>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-sm">
+      <div><h5></h5></div>
+      <div *ngFor="let item2 of arrayDesdeService2">
+        <div>
+          <h6>{{ item2 }}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-divider class="divider"></mat-divider>
+
+
+  
+  <div>Abono<input
+    type="text"
+    [(ngModel)]="subtotal"
+    value="{{ sumacondecimal }}"
+  /></div>
+  
+  <div>Diferencia<input type="text" [(ngModel)]="iva" value="{{ iva }}" /> </div>
+  
+  <div>Total<input
+    type="number"
+    [(ngModel)]="totalng"
+    value="35"
+   placeholder="35$"
+  /></div>
+  <mat-divider class="divider"></mat-divider>
+
+  <div>
+  
+    <button type="submit" (click)="guardar()" class="btn btn-primary btn-lg btn-block">realizar reserva</button>
+     <button (click)="exportar()" class="btn btn-primary btn-lg btn-block"> Descargar datos de la reserva </button>
+    </div>
+</div>
+
+</div>
+
+

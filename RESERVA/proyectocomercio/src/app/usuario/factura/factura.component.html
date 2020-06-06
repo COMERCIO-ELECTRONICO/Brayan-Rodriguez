@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="https://image.flaticon.com/icons/png/512/504/504276.png" width="250px" height="150px" />
+
+    </div>
+    <div class="col-sm-8" style="scroll-margin-top: 35px;">
+      <div class="h1">HOSPITAL METROPOLITANO</div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="col-sm-12">
+      <nav class="nav nav-pills nav-fill">
+
+
+        <a class="nav-item nav-link active" [routerLink]="['/usuario/perfil']">PERFIL</a>
+        <a class="nav-item nav-link active" [routerLink]="['/usuario/servicios']">REGISTRO DOCTOR</a>
+        <a class="nav-item nav-link active" [routerLink]="['/usuario/pacientes']">REGISTRO PACIENTES</a>
+        <a class="nav-item nav-link active" [routerLink]="['/usuario/nuevareserva']">NUEVA RESERVA</a>
+        <a class="nav-item nav-link active" [routerLink]="['/usuario/reserva']"> RESERVA</a>
+        <a class="nav-item nav-link active" [routerLink]="['/inicio']">Cerrar Sesion</a>
+      </nav>
+
+<div class="contenedor" style="text-align:center; width:100%">
+  <div><h3>Listado Reservas</h3></div>
+  <div class="hijo" style="margin:auto; text-align:left; margin-left: 85px;">
+    <table class="table" style="margin:auto; text-align:left; ">
+      <thead class="thead-dark" style="margin:auto; text-align:left;">
+        <tr>
+          <th scope="col">Cedula</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">abono</th>
+          <th scope="col">Total</th>
+        
+        </tr>
+     
+   
+  </thead>
+  <tbody style="background-color: white;">
+    <tr *ngFor="let cliente of clientes">
+      <th>{{ cliente.cedula }}</th>
+      <th>{{ cliente.nombre }}</th>
+      <th>{{ cliente.apellido }}</th>
+      <th>{{ cliente.correo }}</th>
+      <th>{{ cliente.direccion }}</th>
+      <th>{{ cliente.telefono }}</th>
+      <th>{{ cliente.fecha }}</th>
+      <th>35</th>
+      <th>{{ cliente.total }}</th>
+    
+
+
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
